@@ -24,34 +24,44 @@
       }
     </style>
   </head>
+  
 <?php
-$q=mysqli_query($db,"SELECT * FROM leave_request where username='$_SESSION[username]' and status='Approved';");
+$q=mysqli_query($db,"SELECT * FROM leave_request");
 
 $row=mysqli_fetch_assoc($q);
 ?>
-<?php
- 				echo "<b>";
- 				echo "<table class='table table-bordered'>";
-	 				
-                     echo "<tr>";
-	 					echo "<td>";
-	 						echo "<b> Reason: </b>";
-	 					echo "</td>";
-	 					echo "<td>";
-	 						echo $row['reason'];
-	 					echo "</td>";
-	 				echo "</tr>";
-                     echo "<tr>";
-	 					echo "<td>";
-	 						echo "<b> no_of_days_requested </b>";
-	 					echo "</td>";
-	 					echo "<td>";
-	 						echo $row['no_of_days_requested'];
-	 					echo "</td>";
-	 				echo "</tr>";
-
-
-                    
- 				echo "</table>";
- 				echo "</b>";
- 			?>
+<table class="table table-striped table-primary" >
+            <thead>
+            
+            <tr >
+              
+              <th scope="col " class="text-center">Username</th>
+              
+              <th scope="col " class="text-center">Name</th>
+              <th scope="col " class="text-center">Reason</th>
+              <th scope="col " class="text-center">No of days leave</th>
+              <th scope="col " class="text-center">Status</th>
+            </tr>
+            
+          </thead>
+          <tbody>
+            <tr class="td-text text-center">
+            
+              <?php
+  
+								$sql= "SELECT username,emp_name,reason,no_of_days_requested,status  FROM leave_request where username = '$_SESSION[username]'";
+								$res=mysqli_query($db, $sql);
+								
+								while ($row= mysqli_fetch_assoc($res)){
+								
+									echo "<tr><td>{$row["username"]}</td><td>{$row["emp_name"]}</td><td>{$row["reason"]}</td><td>{$row["no_of_days_requested"]}</td><td>{$row["status"]}</td></tr>";
+                                    
+								}
+								
+								echo "</table>";
+              ?>
+              
+            </tr>
+            
+          </tbody>
+        </table>
