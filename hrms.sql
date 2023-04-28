@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 27, 2023 at 10:46 PM
+-- Generation Time: Apr 28, 2023 at 06:42 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -41,7 +41,9 @@ CREATE TABLE `department` (
 
 INSERT INTO `department` (`dept_sl`, `dept_name`, `dept_head`, `dept_task`, `no_of_members`) VALUES
 (1, 'CSE', 'Nirjhor', 'CSE471 Project', 3),
-(2, 'MNS', 'Shuvo', 'ABCD', 4);
+(2, 'MNS', 'Shuvo', 'ABCD', 4),
+(3, 'BBA', 'RFU', 'ECO101', 30),
+(4, 'CS', 'ABC', 'Unknown Task', 5);
 
 -- --------------------------------------------------------
 
@@ -68,7 +70,9 @@ CREATE TABLE `employee` (
 
 INSERT INTO `employee` (`emp_sl`, `username`, `emp_name`, `mobile_no`, `birth_year`, `emp_position`, `dept_name`, `gender`, `salary`, `joining_year`) VALUES
 (1, 'shagoto_t14', 'Shagoto', '1234556778', '2023-04-01', 'Executive', 'CSE', 'Male', 12345, '2023-04-10'),
-(2, 'akhlak_t00', 'Akhlak', '137135013', '2023-04-23', 'ST', 'MNS', 'Male', 7500, '2023-04-30');
+(2, 'akhlak_t00', 'Akhlak', '137135013', '2023-04-23', 'ST', 'MNS', 'Male', 7500, '2023-04-30'),
+(3, 'ami_ar_st_na', 'Hasib', '234242', '2016-01-05', 'Non ST', 'CSE', 'Male', 31513, '2023-04-26'),
+(4, 'dr_mih', 'MIH', '135151', '1982-06-01', 'Faculty', 'CSE', 'Male', 1000000, '2023-04-10');
 
 -- --------------------------------------------------------
 
@@ -101,7 +105,8 @@ CREATE TABLE `leave_request` (
 --
 
 INSERT INTO `leave_request` (`emp_sl`, `emp_name`, `no_of_days_requested`, `reason`, `status`) VALUES
-(1, 'Shagoto', 3, 'CSE471 Project', NULL);
+(1, 'Shagoto', 3, 'CSE471 Project', NULL),
+(2, 'Akhlak', 100, 'Marriage', NULL);
 
 -- --------------------------------------------------------
 
@@ -123,7 +128,8 @@ CREATE TABLE `project` (
 --
 
 INSERT INTO `project` (`project_sl`, `proj_name`, `dept_name`, `proj_leader`, `proj_task`, `no_of_members`) VALUES
-(1, 'CSE471', 'CSE', 'MIH', 'Syllabus design', 3);
+(1, 'CSE471', 'CSE', 'MIH', 'Syllabus design', 3),
+(2, 'CSE423 Project', 'MNS', 'Akhlak', 'Many', 3);
 
 -- --------------------------------------------------------
 
@@ -183,19 +189,19 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `department`
 --
 ALTER TABLE `department`
-  MODIFY `dept_sl` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `dept_sl` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `employee`
 --
 ALTER TABLE `employee`
-  MODIFY `emp_sl` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `emp_sl` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `project`
 --
 ALTER TABLE `project`
-  MODIFY `project_sl` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `project_sl` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
