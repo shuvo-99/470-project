@@ -40,7 +40,7 @@ $row=mysqli_fetch_assoc($q);
               <th scope="col " class="text-center">DeptName</th>
               <th scope="col " class="text-center">DeptHead</th>
               <th scope="col " class="text-center">DeptTask</th>
-              
+              <th scope="col " class="text-center">No of Employee</th>
             </tr>
             
           </thead>
@@ -49,12 +49,12 @@ $row=mysqli_fetch_assoc($q);
             
               <?php
   
-								$sql= "SELECT dept_sl,dept_name,dept_head,dept_task  FROM department";
+								$sql= "SELECT dept_sl,dept_name,dept_head,dept_task,no_of_members  FROM department";
 								$res=mysqli_query($db, $sql);
 								
 								while ($row= mysqli_fetch_assoc($res)){
 								
-									echo "<tr><td>{$row["dept_sl"]}</td><td>{$row["dept_name"]}</td><td>{$row["dept_head"]}</td><td>{$row["dept_task"]}</td></tr>";
+									echo "<tr><td>{$row["dept_sl"]}</td><td>{$row["dept_name"]}</td><td>{$row["dept_head"]}</td><td>{$row["dept_task"]}</td><td>{$row["no_of_members"]}</td></tr>";
                                     
 								}
 								
