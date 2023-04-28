@@ -37,11 +37,16 @@ $row=mysqli_fetch_assoc($q);
               
               <th scope="col " class="text-center">DeptSl</th>
               
-              <th scope="col " class="text-center">DeptName</th>
-              <th scope="col " class="text-center">DeptHead</th>
-              <th scope="col " class="text-center">DeptTask</th>
-              
-            </tr>
+              <th scope="col " class="text-center">UserName</th>
+              <th scope="col " class="text-center">Employee name</th>
+              <th scope="col " class="text-center">Emp_Position</th>
+              <th scope="col " class="text-center">Department</th>
+              <th scope="col " class="text-center">Birth Year</th>
+             
+              <th scope="col " class="text-center">Mobile No</th>
+              <th scope="col " class="text-center">Joining Year</th>
+              <th scope="col " class="text-center">Gender</th>
+             
             
           </thead>
           <tbody>
@@ -49,12 +54,12 @@ $row=mysqli_fetch_assoc($q);
             
               <?php
   
-								$sql= "SELECT emp_sl,username,emp_position,dept_name  FROM employee";
+								$sql= "SELECT emp_sl,username,emp_position,dept_name,mobile_no,birth_year,joining_year,emp_name,gender  FROM employee";
 								$res=mysqli_query($db, $sql);
 								
 								while ($row= mysqli_fetch_assoc($res)){
 								
-									echo "<tr><td>{$row["emp_sl"]}</td><td>{$row["username"]}</td><td>{$row["emp_position"]}</td><td>{$row["dept_name"]}</td></tr>";
+									echo "<tr><td>{$row["emp_sl"]}</td><td>{$row["username"]}</td><td>{$row["emp_name"]}</td><td>{$row["emp_position"]}</td><td>{$row["dept_name"]}</td><td>{$row["birth_year"]}</td><td>{$row["mobile_no"]}</td><td>{$row["joining_year"]}</td><td>{$row["gender"]}</td>/tr>";
                                     
 								}
 								
