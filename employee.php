@@ -1,5 +1,6 @@
 
 <?php 
+session_start();
 	include "dbconnection.php";
 	
  ?>
@@ -134,14 +135,17 @@
               </div> -->
             </div>
             <div class="col-8">
-              Welcome 
-                <br>
-                <?php
-                $q=mysqli_query($db,"SELECT * FROM employee  where username='shagoto_t14' ;");
+
+            <?php
+                
+                $q=mysqli_query($db,"SELECT * FROM employee where username='$_SESSION[username]' ;");
  				$row=mysqli_fetch_assoc($q);
 
  	
  			?>
+              Welcome <?php echo($row['emp_name']); ?>
+                <br>
+                
             <?php
  				echo "<b>";
  				echo "<table class='table table-bordered'>";
@@ -179,7 +183,7 @@
 	 						echo "<b> Email: </b>";	
 	 					echo "</td>";
 	 					echo "<td>";
-	 						echo $row['admin_email'];
+	 						echo $row['gmail'];
 	 					echo "</td>";
 	 				echo "</tr>";
 
@@ -218,7 +222,7 @@
          echo "</tr>";
          echo "<tr>";
          echo "<td>";
-             echo "<b> Gemder: </b>";
+             echo "<b> Gender: </b>";
          echo "</td>";
          echo "<td>";
              echo $row['gender'];

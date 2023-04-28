@@ -17,13 +17,13 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
     $joining_year = $_POST['joining_year'];
 
     $query = "select * from user where username = '$username'";
-    $result = mysqli_query($connect, $query);
+    $result = mysqli_query($db, $query);
     if(mysqli_num_rows($result) == 0)
     {
         $query = "insert into employee values(0, '$username', '$emp_name', '$mobile_no', '$gmail', '$birth_year', '$emp_position', '$dept_name', '$gender', '$salary', '$joining_year')";
-        $result = mysqli_query($connect, $query);
+        $result = mysqli_query($db, $query);
         $query = "insert into user values('$username', '$password')";
-        $result = mysqli_query($connect, $query);
+        $result = mysqli_query($db, $query);
     }
     else
     {
