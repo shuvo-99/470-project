@@ -66,7 +66,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
                 <span class="navbar-toggler-icon"></span>
                 </button>
                 <div>
-                <a href="employee.php" class="btn" role="button">Human Resource Management System</a>
+                <a href="admin.php" class="btn" role="button">Human Resource Management System</a>
                 </div>
                 <div
                 class="collapse navbar-collapse justify-content-end"
