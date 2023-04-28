@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 28, 2023 at 09:49 PM
+-- Generation Time: Apr 29, 2023 at 01:57 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -98,6 +98,7 @@ CREATE TABLE `leave_report` (
 --
 
 CREATE TABLE `leave_request` (
+  `req_sl` bigint(20) UNSIGNED NOT NULL,
   `username` varchar(100) NOT NULL,
   `emp_name` varchar(100) NOT NULL,
   `no_of_days_requested` int(11) NOT NULL,
@@ -109,10 +110,11 @@ CREATE TABLE `leave_request` (
 -- Dumping data for table `leave_request`
 --
 
-INSERT INTO `leave_request` (`username`, `emp_name`, `no_of_days_requested`, `reason`, `status`) VALUES
-('akhlak_t00', 'Akhlak', 100, 'Marriage', NULL),
-('shagoto_t14', 'Shagoto', 5, 'Sleep', NULL),
-('akhlak_t00', 'Shagoto', 10, 'Sleep', NULL);
+INSERT INTO `leave_request` (`req_sl`, `username`, `emp_name`, `no_of_days_requested`, `reason`, `status`) VALUES
+(1, 'akhlak_t00', 'Akhlak', 100, 'Marriage', 'Approved'),
+(2, 'shagoto_t14', 'Shagoto', 5, 'Sleep', NULL),
+(3, 'akhlak_t00', 'Shagoto', 10, 'Sleep', 'Approved'),
+(4, 'shagoto_t14', 'Shagoto', 100, 'Deadline', NULL);
 
 -- --------------------------------------------------------
 
@@ -157,7 +159,8 @@ CREATE TABLE `salary` (
 
 INSERT INTO `salary` (`username`, `emp_name`, `month`, `medium`, `amount`) VALUES
 ('shagoto_t14', 'Shagoto', 'April', 'Bkash', 7500),
-('akhlak_t00', 'Akhlak', 'March', 'Nagad', 8000);
+('akhlak_t00', 'Akhlak', 'March', 'Nagad', 8000),
+('shagoto_t14', 'Shagoto', 'May', 'Bank', 100);
 
 -- --------------------------------------------------------
 
@@ -200,6 +203,12 @@ ALTER TABLE `employee`
   ADD UNIQUE KEY `emp_sl` (`emp_sl`);
 
 --
+-- Indexes for table `leave_request`
+--
+ALTER TABLE `leave_request`
+  ADD UNIQUE KEY `req_sl` (`req_sl`);
+
+--
 -- Indexes for table `project`
 --
 ALTER TABLE `project`
@@ -226,6 +235,12 @@ ALTER TABLE `department`
 --
 ALTER TABLE `employee`
   MODIFY `emp_sl` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `leave_request`
+--
+ALTER TABLE `leave_request`
+  MODIFY `req_sl` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `project`
