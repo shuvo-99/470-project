@@ -66,6 +66,12 @@
         ?>
         <br>
 
+		<label><h4><b>Position</b></h4></label>
+        <?php
+        echo "<td>"; echo $row['emp_position']; echo "</td>";
+        ?>
+        <br>
+
         <label><h4><b>Email: </b></h4></label>
 		<input class="form-control" type="text" name="gmail" value="<?php echo $row['gmail']; ?>">
 
