@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 28, 2023 at 03:23 PM
+-- Generation Time: Apr 28, 2023 at 09:49 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -72,8 +72,8 @@ CREATE TABLE `employee` (
 --
 
 INSERT INTO `employee` (`emp_sl`, `username`, `emp_name`, `mobile_no`, `gmail`, `birth_year`, `emp_position`, `dept_name`, `gender`, `salary`, `joining_year`) VALUES
-(1, 'shagoto_t14', 'Shagoto', '1234556778', 'shagoto123@gmail.com', '2023-04-01', 'Executive', 'CSE', 'Male', 12345, '2023-04-10'),
-(2, 'akhlak_t00', 'Akhlak', '137135013', 'akhlak3431@gmail.com', '2023-04-23', 'ST', 'MNS', 'Male', 7500, '2023-04-30'),
+(1, 'shagoto_t14', 'Shagoto', '1234556778', 'shagoto123@gmail.com', '2023-04-01', 'Executive', 'CS', 'Male', 12345, '2023-04-10'),
+(2, 'akhlak_t00', 'Akhlak', '12345678', 'akhlak1234@gmail.com', '2023-04-23', 'ST', 'CS', 'Male', 7500, '2023-04-30'),
 (3, 'ami_ar_st_na', 'Hasib', '234242', 'hasib@gmail.com', '2016-01-05', 'Non ST', 'CSE', 'Male', 31513, '2023-04-26'),
 (4, 'dr_mih', 'MIH', '135151', 'm.i.h@gmrail.com', '1982-06-01', 'Faculty', 'CSE', 'Male', 1000000, '2023-04-10'),
 (5, 'icpc21pre_team_0145', 'Tom', '123456675', 'tom@gmail.com', '2023-02-12', 'Head', 'MNS', 'Male', 0, '2023-04-13'),
@@ -98,7 +98,7 @@ CREATE TABLE `leave_report` (
 --
 
 CREATE TABLE `leave_request` (
-  `emp_sl` int(11) NOT NULL,
+  `username` varchar(100) NOT NULL,
   `emp_name` varchar(100) NOT NULL,
   `no_of_days_requested` int(11) NOT NULL,
   `reason` varchar(100) NOT NULL,
@@ -109,9 +109,10 @@ CREATE TABLE `leave_request` (
 -- Dumping data for table `leave_request`
 --
 
-INSERT INTO `leave_request` (`emp_sl`, `emp_name`, `no_of_days_requested`, `reason`, `status`) VALUES
-(1, 'Shagoto', 3, 'CSE471 Project', NULL),
-(2, 'Akhlak', 100, 'Marriage', NULL);
+INSERT INTO `leave_request` (`username`, `emp_name`, `no_of_days_requested`, `reason`, `status`) VALUES
+('akhlak_t00', 'Akhlak', 100, 'Marriage', NULL),
+('shagoto_t14', 'Shagoto', 5, 'Sleep', NULL),
+('akhlak_t00', 'Shagoto', 10, 'Sleep', NULL);
 
 -- --------------------------------------------------------
 
@@ -143,12 +144,20 @@ INSERT INTO `project` (`project_sl`, `proj_name`, `dept_name`, `proj_leader`, `p
 --
 
 CREATE TABLE `salary` (
-  `emp_sl` int(11) NOT NULL,
+  `username` varchar(100) NOT NULL,
   `emp_name` varchar(100) NOT NULL,
   `month` varchar(100) NOT NULL,
-  `through` varchar(100) NOT NULL,
+  `medium` varchar(100) NOT NULL,
   `amount` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `salary`
+--
+
+INSERT INTO `salary` (`username`, `emp_name`, `month`, `medium`, `amount`) VALUES
+('shagoto_t14', 'Shagoto', 'April', 'Bkash', 7500),
+('akhlak_t00', 'Akhlak', 'March', 'Nagad', 8000);
 
 -- --------------------------------------------------------
 
@@ -189,12 +198,6 @@ ALTER TABLE `department`
 --
 ALTER TABLE `employee`
   ADD UNIQUE KEY `emp_sl` (`emp_sl`);
-
---
--- Indexes for table `leave_request`
---
-ALTER TABLE `leave_request`
-  ADD PRIMARY KEY (`emp_sl`);
 
 --
 -- Indexes for table `project`
