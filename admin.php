@@ -33,7 +33,7 @@
  			}
 
 
- 				$q=mysqli_query($db,"SELECT * FROM user where user='$_SESSION[username]' ;");
+ 				$q=mysqli_query($db,"SELECT * FROM user where username='$_SESSION[username]' ;");
  			?>
  			<h2 style="text-align: center;">My Profile</h2>
              <br>
@@ -60,7 +60,7 @@
 	 						echo "<b> Name: </b>";
 	 					echo "</td>";
 	 					echo "<td>";
-	 						echo $row['user'];
+	 						echo $row['username'];
 	 					echo "</td>";
 	 				echo "</tr>";
 
