@@ -16,6 +16,12 @@
       src="https://kit.fontawesome.com/5b05054594.js"
       crossorigin="anonymous"
     ></script>
+
+    <style>
+      .func_btn{
+        color: rgb(250, green, blue);
+      }
+    </style>
   </head>
   <body>
     <!-- <h1>Hello, world!</h1> -->
@@ -89,7 +95,7 @@
       <section class="container">
         <div class="container text-center">
           <div class="row">
-            <div class="col-4 text-white bg-secondary">
+            <div class="col-4 text bg-secondary">
               <!-- <div class="row flex-column container bg-primary ps-2">
                 <div class="col">
                   1 of 2
@@ -99,9 +105,18 @@
                 </div>
               </div>
               </div> -->
-              <div class="row container bg-primary">
+              
+              <div class="d-grid gap-5 pt-5 pb-5 col-6 mx-auto">
+                <button class="btn btn-light" type="button">Update Profile</button>
+                <button class="btn btn-light" type="button">View Salary Report</button>
+                <button class="btn btn-light" type="button">View Leave Report</button>
+                <button class="btn btn-light" type="button">Leave Request</button>
+              </div>
+              
+              <!-- <br>
+              <div class="row container">
                 <div class="col">
-                  1
+                  <button type="button" class="btn btn-danger">View Salary Report</button>
                 </div>
               </div>
               <br>
@@ -110,14 +125,22 @@
                   <button type="button" class="btn btn-danger">View Leave Report</button>
                 </div>
               </div>
+              <br>
+              <div class="row container">
+                <div class="col">
+                  <button type="button" class="btn btn-danger">Leave Request</button>
+                </div>
+              </div> -->
             </div>
             <div class="col-8">
-              Profile
+              Welcome 
             </div>
+            
           </div>
         </div>
       </section>
     </main>
+    <br>
     <footer>
       <section class="bg-dark">
         <div class="container my-5">
@@ -128,7 +151,7 @@
               <!-- <div class="p-3 rounded-3 shadow-lg text-center h mb-5">
                 Experience
               </div> -->
-              <h2 class="fw-bold text-white">About Us</h2>
+              <h3 class="fw-bold text-white">About Us</h3>
               <p class="text-white">
                 Sunrise company is a leading IT company in Bangladesh with over 150+ clients from different countries accross the world. 
               </p>
@@ -137,7 +160,7 @@
             <!-- Links -->
 
             <div class="col-lg-4">
-              <h1 class="text-white">What makes us unique</h1>
+              <h3 class="text-white">What makes us unique</h3>
               <ul class="p-0">
                 <!-- home -->
 
@@ -209,7 +232,7 @@
             <!-- Conatacts and Info -->
 
             <div class="col-lg-4">
-              <h1 class="text-white">Contacts and Info</h1>
+              <h3 class="text-white">Contacts and Info</h3>
               <ul class="p-0">
                 <!-- House -->
 
