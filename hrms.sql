@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 28, 2023 at 06:42 AM
+-- Generation Time: Apr 28, 2023 at 03:23 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -43,7 +43,9 @@ INSERT INTO `department` (`dept_sl`, `dept_name`, `dept_head`, `dept_task`, `no_
 (1, 'CSE', 'Nirjhor', 'CSE471 Project', 3),
 (2, 'MNS', 'Shuvo', 'ABCD', 4),
 (3, 'BBA', 'RFU', 'ECO101', 30),
-(4, 'CS', 'ABC', 'Unknown Task', 5);
+(4, 'CS', 'ABC', 'Unknown Task', 5),
+(5, 'ANT', 'ZTK', 'Final', 3),
+(6, 'ABC', 'ABC', 'Final', 5);
 
 -- --------------------------------------------------------
 
@@ -56,6 +58,7 @@ CREATE TABLE `employee` (
   `username` varchar(100) NOT NULL,
   `emp_name` varchar(100) NOT NULL,
   `mobile_no` varchar(15) NOT NULL,
+  `gmail` varchar(100) NOT NULL,
   `birth_year` date NOT NULL,
   `emp_position` varchar(100) NOT NULL,
   `dept_name` varchar(100) NOT NULL,
@@ -68,11 +71,13 @@ CREATE TABLE `employee` (
 -- Dumping data for table `employee`
 --
 
-INSERT INTO `employee` (`emp_sl`, `username`, `emp_name`, `mobile_no`, `birth_year`, `emp_position`, `dept_name`, `gender`, `salary`, `joining_year`) VALUES
-(1, 'shagoto_t14', 'Shagoto', '1234556778', '2023-04-01', 'Executive', 'CSE', 'Male', 12345, '2023-04-10'),
-(2, 'akhlak_t00', 'Akhlak', '137135013', '2023-04-23', 'ST', 'MNS', 'Male', 7500, '2023-04-30'),
-(3, 'ami_ar_st_na', 'Hasib', '234242', '2016-01-05', 'Non ST', 'CSE', 'Male', 31513, '2023-04-26'),
-(4, 'dr_mih', 'MIH', '135151', '1982-06-01', 'Faculty', 'CSE', 'Male', 1000000, '2023-04-10');
+INSERT INTO `employee` (`emp_sl`, `username`, `emp_name`, `mobile_no`, `gmail`, `birth_year`, `emp_position`, `dept_name`, `gender`, `salary`, `joining_year`) VALUES
+(1, 'shagoto_t14', 'Shagoto', '1234556778', 'shagoto123@gmail.com', '2023-04-01', 'Executive', 'CSE', 'Male', 12345, '2023-04-10'),
+(2, 'akhlak_t00', 'Akhlak', '137135013', 'akhlak3431@gmail.com', '2023-04-23', 'ST', 'MNS', 'Male', 7500, '2023-04-30'),
+(3, 'ami_ar_st_na', 'Hasib', '234242', 'hasib@gmail.com', '2016-01-05', 'Non ST', 'CSE', 'Male', 31513, '2023-04-26'),
+(4, 'dr_mih', 'MIH', '135151', 'm.i.h@gmrail.com', '1982-06-01', 'Faculty', 'CSE', 'Male', 1000000, '2023-04-10'),
+(5, 'icpc21pre_team_0145', 'Tom', '123456675', 'tom@gmail.com', '2023-02-12', 'Head', 'MNS', 'Male', 0, '2023-04-13'),
+(6, 'killer', 'Jerry', '123442', 'abc@gmail.com', '2023-02-12', 'Head', 'ANT', 'Male', 0, '2023-04-13');
 
 -- --------------------------------------------------------
 
@@ -134,6 +139,20 @@ INSERT INTO `project` (`project_sl`, `proj_name`, `dept_name`, `proj_leader`, `p
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `salary`
+--
+
+CREATE TABLE `salary` (
+  `emp_sl` int(11) NOT NULL,
+  `emp_name` varchar(100) NOT NULL,
+  `month` varchar(100) NOT NULL,
+  `through` varchar(100) NOT NULL,
+  `amount` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user`
 --
 
@@ -151,6 +170,8 @@ INSERT INTO `user` (`username`, `password`) VALUES
 ('akhlak_t00', '45678'),
 ('ami_ar_st_na', '09876'),
 ('dr_mih', '75685'),
+('icpc21pre_team_0145', '123'),
+('killer', '34567'),
 ('shagoto_t14', '12345');
 
 --
@@ -168,6 +189,12 @@ ALTER TABLE `department`
 --
 ALTER TABLE `employee`
   ADD UNIQUE KEY `emp_sl` (`emp_sl`);
+
+--
+-- Indexes for table `leave_request`
+--
+ALTER TABLE `leave_request`
+  ADD PRIMARY KEY (`emp_sl`);
 
 --
 -- Indexes for table `project`
@@ -189,13 +216,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `department`
 --
 ALTER TABLE `department`
-  MODIFY `dept_sl` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `dept_sl` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `employee`
 --
 ALTER TABLE `employee`
-  MODIFY `emp_sl` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `emp_sl` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `project`
