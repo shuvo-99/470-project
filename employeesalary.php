@@ -26,9 +26,9 @@
   </head>
   
 <?php
-$q=mysqli_query($db,"SELECT * FROM salary where username='$_SESSION[username]';");
+$q1=mysqli_query($db,"SELECT * FROM salary where username='$_SESSION[username]';");
 
-$row=mysqli_fetch_assoc($q);
+$row=mysqli_fetch_assoc($q1);
 ?>
 <table class="table table-striped table-primary" >
             <thead>
@@ -50,7 +50,7 @@ $row=mysqli_fetch_assoc($q);
             
               <?php
   
-								$sql= "SELECT emp_name,username,month,medium,payment  FROM salary where username = '$_SESSION[username]';
+								$sql= "SELECT emp_name,username,month,medium,payment  FROM salary where username = '$_SESSION[username]'";
 								$res=mysqli_query($db, $sql);
 								
 								while ($row= mysqli_fetch_assoc($res)){
