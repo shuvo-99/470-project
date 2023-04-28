@@ -76,12 +76,84 @@
 	 						echo $row['password'];
 	 					echo "</td>";
 	 				echo "</tr>";
-
-	 				
- 				echo "</table>";
- 				echo "</b>";
+				echo "</table>";
+				echo "</b>";
+				
  			?>
  		</div>
- 	</div>
+		<div style="text-align: center;"> <b>Add </b>
+		<form action="" method="post">
+ 			<button class="btn btn-default" style="float: right; width: 70px;" name="submit2" type="submit">DEPT</button>
+ 		</form>
+		<?php
+
+if(isset($_POST['submit2']))
+{
+	?>
+	<script type="text/javascript">
+		window.location="add_department.php"
+	</script>
+	<?php
+}
+
+
+	
+?>
+<br>
+
+ 			
+ 			?>
+			 <form action="" method="post">
+ 			<button class="btn btn-default" style="float: right; width: 70px;" name="submit3" type="submit">EMPLOYEE</button>
+ 		</form>
+		<?php
+
+if(isset($_POST['submit3']))
+{
+	?>
+	<script type="text/javascript">
+		window.location="add_employee.php"
+	</script>
+	<?php
+}
+
+
+	
+?>
+
+ 			
+ 			?>	 		
+ 			</div>
+			 <br>
+
+ 			
+?>
+<form action="" method="post">
+<button class="btn btn-default" style="float: right; width: 70px;" name="submit4" type="submit">Project</button>
+</form>
+<?php
+
+if(isset($_POST['submit4']))
+{
+?>
+<script type="text/javascript">
+window.location="add_project.php"
+</script>
+<?php
+}
+
+
+
+?>
+
+
+?>	 	
+	
+	
+ 			
+ 			</div>
+
+    
+
  </body>
  </html>
