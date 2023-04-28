@@ -47,7 +47,7 @@
             <li class="nav-item nav-text">
               <a href="employee.php" class="btn" role="button">Profile</a>
             </li>
-            <li class="nav-item nav-text">
+            <!-- <li class="nav-item nav-text">
               <a href="inbox.php" class="btn" role="button">Inbox</a>
             </li>
             <li class="nav-item nav-text">
@@ -59,7 +59,7 @@
               <a href="view_request.php" class="btn" role="button"
                 >Donation Request</a
               >
-            </li>
+            </li> -->
             <li class="nav-item">
               <a href="logout.php" class="btn btn-warning" role="button"
                 >Log Out</a
