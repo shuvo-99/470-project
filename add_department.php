@@ -3,18 +3,18 @@ session_start();
 include("dbconnection.php");
 
 if($_SERVER['REQUEST_METHOD'] == 'POST')
-{
+{   $dept_sl = $_POST['dept_sl'];
     $dept_name = $_POST['dept_name'];
     $dept_head = $_POST['dept_head'];
     $dept_task = $_POST['dept_task'];
     $no_of_members = $_POST['no_of_members'];
 
     $query = "select * from department where dept_name = '$dept_name'";
-    $result = mysqli_query($connect, $query);
+    $result = mysqli_query($db, $query);
     if(mysqli_num_rows($result) == 0)
     {
-        $query = "insert into department values(0, '$dept_name', '$dept_head', '$dept_task', '$no_of_members')";
-        $result = mysqli_query($connect, $query);
+        $query = "insert into department values('$dept_sl','$dept_name', '$dept_head', '$dept_task', '$no_of_members')";
+        $result = mysqli_query($db, $query);
     }
     else
     {
@@ -38,6 +38,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 
     <main>
         <form method="POST">
+            <input type="number" name="dept_sl" placeholder="Department Serial" required><br>
             <input type="text" name="dept_name" placeholder="Department Name" required><br>
             <input type="text" name="dept_head" placeholder="Department Head" required><br>
             <input type="text" name="dept_task" placeholder="Department Task" required><br>
