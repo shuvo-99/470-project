@@ -76,11 +76,22 @@
         $_SESSION['username'] = $_POST['username']; 
         /*$_SESSION['pic']= $row['pic'];*/
 
-        ?>
-          <script type="text/javascript">
-            window.location="admin.php"
-          </script>
-        <?php
+        if($_SESSION['username'] == 'admin')
+        {
+          ?>
+            <script type="text/javascript">
+              window.location="admin.php"
+            </script>
+          <?php
+        }
+        else
+        {
+          ?>
+            <script type="text/javascript">
+              window.location="employee.php"
+            </script>
+          <?php
+        }
       }
     }
 
