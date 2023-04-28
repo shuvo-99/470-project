@@ -20,8 +20,8 @@
       </div>
     </nav> -->
     <!-- navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+      <div class="container-fluid container">
         <button
           class="navbar-toggler"
           type="button"
@@ -80,11 +80,15 @@
     </nav>
     <main>
       <section class="container">
-        <div class="col-lg-3">
-          <p>function</p>
-        </div>
-        <div class="col-lg-9">
-          <p>profile</p>
+        <div class="container text-center">
+          <div class="row">
+            <div class="col-4 text-white bg-secondary">
+              1 of 3
+            </div>
+            <div class="col-8">
+              2 of 3 (wider)
+            </div>
+          </div>
         </div>
       </section>
     </main>
