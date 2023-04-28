@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Employee</title>
+    <title>Manage Leave</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
   
     <!-- font awesome -->
@@ -24,9 +24,9 @@
       }
     </style>
   </head>
-  
-<body>
-<?php
+
+  <body>
+  <?php
 $q=mysqli_query($db,"SELECT * FROM leave_request");
 
 $row=mysqli_fetch_assoc($q);
@@ -50,7 +50,7 @@ $row=mysqli_fetch_assoc($q);
             
               <?php
   
-								$sql= "SELECT req_sl,username,emp_name,reason,no_of_days_requested,status  FROM leave_request";
+								$sql= "SELECT req_sl,username,emp_name,reason,no_of_days_requested,status  FROM leave_request where status is NULL";
 								$res=mysqli_query($db, $sql);
 								
 								while ($row= mysqli_fetch_assoc($res)){
@@ -66,5 +66,42 @@ $row=mysqli_fetch_assoc($q);
             
           </tbody>
         </table>
-</body>
+
+<form method="POST">
+    <div class="form-group">
+        <label for="exampleInputEmail1">Serial</label>
+        <input type="text" name="serial" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Serial">
+        
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Status</label>
+        <input type="text" name="status" class="form-control" id="exampleInputPassword1" placeholder="Enter Status">
+    </div>
+    
+    <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+</form>
+
+<?php
+
+if(isset($_POST['submit'])){
+    $serial = $_POST['serial'];
+    $status = $_POST['status'];
+    
+    $sql = "UPDATE leave_request SET status='$status' WHERE req_sl='$serial'";
+    $res = mysqli_query($db, $sql);
+    
+    if($res){
+        ?>
+        <script type="text/javascript">
+			alert("Updated Successfully");
+			window.location="admin.php";
+		</script>
+        <?php
+    }else{
+        echo "Failed to update";
+    }
+
+}
+?>
+  </body>
 </html>
