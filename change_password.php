@@ -57,6 +57,7 @@ if(isset($_POST['submit']))
 
     <title>Change Password</title>
 
+    <!-- CSS  -->
     <style>
     .de{
         text-decoration: none;
@@ -113,6 +114,8 @@ if(isset($_POST['submit']))
                 </div>
             </div>
         </nav>
+
+        <!-- Form -->
         <section style="height: 500px;" class="container bg-info d-flex justify-content-center align-items-center rounded-3 " id="subscribe">
             
             <div>
@@ -136,11 +139,13 @@ if(isset($_POST['submit']))
                     </div>
         
                     <br> 
-                    <button type="submit" name="submit" class="btn btn-primary">Change Password</button>
+                    <button type="submit" name="submit" class="btn btn-danger">Submit</button>
                     <br>
                 </form>
             </div>
         </section>
+
+
         <!-- <form method="POST">
             <input type="text" name="username" placeholder="Username" required=""><br>
             <input type="password" name="password" placeholder="New Password" required=""><br>
