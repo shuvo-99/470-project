@@ -26,14 +26,7 @@ session_start();
     </style>
   </head>
   <body>
-    <!-- <h1>Hello, world!</h1> -->
-    <!-- <nav class="navbar bg-light ">
-      <div class="container-fluid">
-        <a class="navbar-brand ">Human Resource Management System</a>
-        <a class="navbar-brand" href="employee.php">Profile</a>
-        <a class="navbar-brand" href="admin_login.php">Logout</a>
-      </div>
-    </nav> -->
+    
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light ">
       <div class="container-fluid container">
@@ -59,83 +52,42 @@ session_start();
             class="navbar-nav me-2 my-2 my-lg-0 navbar-nav-scroll"
             style="--bs-scroll-height: 100px"
           >
+            <!-- Profile button -->
+
             <li class="nav-item nav-text">
               <a href="employee.php" class="btn" role="button">Profile</a>
             </li>
-            <!-- <li class="nav-item nav-text">
-              <a href="inbox.php" class="btn" role="button">Inbox</a>
-            </li>
-            <li class="nav-item nav-text">
-              <a href="donation_history.php" class="btn" role="button"
-                >Donation history</a
-              >
-            </li>
-            <li class="nav-item nav-text">
-              <a href="view_request.php" class="btn" role="button"
-                >Donation Request</a
-              >
-            </li> -->
+            
+            <!-- Logout button -->
+
             <li class="nav-item">
               <a href="logout.php" class="btn btn-warning" role="button"
                 >Log Out</a
               >
             </li>
           </ul>
-          <!-- <form class="d-flex">
-            
-            <li class="nav-item">
-              <a class="nav-link disabled">Link</a>
-            </li>
-            <a href="logout.php" class="btn btn-warning" role="button"
-              >Log Out</a
-            >
-          </form> -->
         </div>
       </div>
     </nav>
+    
     <main>
       <section class="container">
         <div class="container text-center">
           <div class="row">
             <div class="col-4 text bg-secondary">
-              <!-- <div class="row flex-column container bg-primary ps-2">
-                <div class="col">
-                  1 of 2
-                </div>
-                <div class="col">
-                  2 of 2
-                </div>
-              </div>
-              </div> -->
+              
               
               <div class="d-grid gap-5 pt-5 pb-5 col-6 mx-auto">
-                <button class="btn btn-light" type="button">Update Profile</button>
-                <button class="btn btn-light" type="button">View Salary Report</button>
-                <button class="btn btn-light" type="button">View Leave Report</button>
-                <button class="btn btn-light" type="button">Leave Request</button>
+                <a href="update_profile.php" class="btn btn-light" type="button">Update Profile</a>
+                <a href="salary_report.php" class="btn btn-light" type="button">View Salary Report</a>
+                <a href="leave_report.php" class="btn btn-light" type="button">View Leave Report</a>
+                <a href="leave_request.php" class="btn btn-light" type="button">Leave Request</a>
+                <a href="change_password.php" class="btn btn-light" type="button">Change Password</a>
               </div>
               
-              <!-- <br>
-              <div class="row container">
-                <div class="col">
-                  <button type="button" class="btn btn-danger">View Salary Report</button>
-                </div>
-              </div>
-              <br>
-              <div class="row container">
-                <div class="col">
-                  <button type="button" class="btn btn-danger">View Leave Report</button>
-                </div>
-              </div>
-              <br>
-              <div class="row container">
-                <div class="col">
-                  <button type="button" class="btn btn-danger">Leave Request</button>
-                </div>
-              </div> -->
             </div>
             <div class="col-8">
-
+              
             <?php
                 
                 $q=mysqli_query($db,"SELECT * FROM employee where username='$_SESSION[username]' ;");
@@ -143,9 +95,37 @@ session_start();
 
  	
  			?>
-              Welcome <?php echo($row['emp_name']); ?>
-                <br>
-                
+              <h3 class="text-danger">Welcome <?php echo($row['emp_name']); ?></h3>
+              <br>
+              <!-- <table class="table">
+                <thead> -->
+                  <!-- <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">First</th>
+                    <th scope="col">Last</th>
+                    <th scope="col">Handle</th>
+                  </tr> -->
+                <!-- </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td colspan="2">Larry the Bird</td>
+                    <td>@twitter</td>
+                  </tr>
+                </tbody>
+              </table>     -->
             <?php
  				echo "<b>";
  				echo "<table class='table table-bordered'>";
