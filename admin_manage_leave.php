@@ -83,7 +83,7 @@ $row=mysqli_fetch_assoc($q);
   <div>
     <h3 class="text-center">Leave Request List</h3>
     <br>
-    <table class="table table-striped table-primary " >
+    <table class="table table-striped table-primary table-bordered border-dark" >
         <thead>
         
         <tr >
