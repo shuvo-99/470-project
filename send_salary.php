@@ -7,10 +7,11 @@ if(isset($_POST['submit']))
     $user_name = $_POST['user_name'];
     $name = $_POST['name'];
     $month = $_POST['month'];
+    $year = $_POST['year'];
     $salary = $_POST['salary'];
     $medium = $_POST['medium'];
     
-    $sql = "INSERT INTO salary (username, emp_name, month, medium, amount) VALUES ('$user_name', '$name', '$month', '$medium', '$salary')";
+    $sql = "INSERT INTO salary (username, emp_name, month,year, medium, amount) VALUES ('$user_name', '$name', '$month','$year', '$medium', '$salary')";
     $result = mysqli_query($db, $sql);
     
     if($result)
@@ -95,7 +96,7 @@ if(isset($_POST['submit']))
         </nav>
 
         <!-- Form -->
-        <section style="height: 700px;" class="container bg-info d-flex justify-content-center align-items-center rounded-3 " id="subscribe">
+        <section style="height: 800px;" class="container bg-info d-flex justify-content-center align-items-center rounded-3 " id="subscribe">
             
             <div>
             <br>
@@ -121,12 +122,17 @@ if(isset($_POST['submit']))
                         <input type="text" name="month" class="form-control"  required="">
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Salary</label>
-                        <input type="text" name="salary" class="form-control" required="">
+                        <label class="form-label">Year</label>
+                        <input type="text" name="year" class="form-control"  required="">
                     </div>
+                    
                     <div class="mb-3">
                         <label class="form-label">Medium</label>
                         <input type="text" name="medium" class="form-control" required="">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Salary</label>
+                        <input type="text" name="salary" class="form-control" required="">
                     </div>
         
                     <br> 
