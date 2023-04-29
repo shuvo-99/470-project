@@ -40,7 +40,7 @@
 	<body>
 
 		<!-- navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-secondary fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
       <div class="container-fluid container">
         <button
           class="navbar-toggler"
@@ -106,14 +106,14 @@
 				<div class="col-lg-6 col-md-6 col-12">
 					<a href="add_employee.php" class="link-deco">
 						<div class="p-3 border bg-warning rounded-3  ">
-							<h1 class="text-white  text-center">Employee</h1>
+							<h3 class="text-white  text-center">Employee</h3>
 						</div>
 					</a>
 				</div>  
 				<div class="col-lg-6 col-md-6 col-12">
 					<a href="add_department.php" class="link-deco">
 						<div class="p-3 border bg-success  rounded-3">
-							<h1 class="text-white text-center">Department</h1>
+							<h3 class="text-white text-center">Department</h3>
 						</div>
 					</a>
 					
@@ -122,15 +122,15 @@
 				<a href="add_project.php" class="link-deco">
 				<div class="p-3 border bg-primary rounded-3">
 					
-					<h1 class="text-white text-center">Project</h1>
+					<h3 class="text-white text-center">Project</h3>
 				</div>
 				</a>
 					
 				</div>
 				<div class="col-lg-6 col-md-6 col-12">
 				<a href="send_salary.php" class="link-deco">
-					<div class="p-3 border bg-primary  rounded-3">
-						<h1 class="text-white text-center">Payment</h1>
+					<div class="p-3 border bg-success  rounded-3">
+						<h3 class="text-white text-center">Payment</h3>
 						
 					</div>
 				</a>
@@ -145,8 +145,6 @@
 				<div class="col">Column</div>
 			</div> -->
 		</section>
-		<br>
-		<br>
 
 		<!-- Manage Reports  -->
 
@@ -156,14 +154,14 @@
 				<div class="col-lg-6 col-md-6 col-12">
 					<a href="employeereport.php" class="link-deco">
 						<div class="p-3 border bg-warning rounded-3  ">
-							<h1 class="text-white  text-center">Employee</h1>
+							<h3 class="text-white  text-center">Employee</h3>
 						</div>
 					</a>
 				</div>  
 				<div class="col-lg-6 col-md-6 col-12">
 					<a href="departmentreport.php" class="link-deco">
 						<div class="p-3 border bg-success  rounded-3">
-							<h1 class="text-white text-center">Department</h1>
+							<h3 class="text-white text-center">Department</h3>
 						</div>
 					</a>
 					
@@ -172,7 +170,7 @@
 				<a href="projectreport.php" class="link-deco">
 				<div class="p-3 border bg-primary rounded-3">
 					
-					<h1 class="text-white text-center">Project</h1>
+					<h3 class="text-white text-center">Project</h3>
 				</div>
 				</a>
 					
@@ -180,7 +178,7 @@
 				<div class="col-lg-6 col-md-6 col-12">
 				<a href="salaryreport.php" class="link-deco">
 					<div class="p-3 border bg-primary  rounded-3">
-						<h1 class="text-white text-center">Payment</h1>
+						<h3 class="text-white text-center">Payment</h3>
 						
 					</div>
 				</a>
@@ -188,11 +186,52 @@
 				<div class="col-lg-6 col-md-6 col-12">
 				<a href="adminleavereport.php" class="link-deco">
 					<div class="p-3 border bg-primary  rounded-3">
-						<h1 class="text-white text-center">Leave</h1>
+						<h3 class="text-white text-center">Leave</h3>
 						
 					</div>
 				</a>
 				</div>
+			</div> 
+			<br>
+			<!-- <div class="container text-center">
+			<div class="row row-cols-2">
+				<div class="col">Column</div>
+				<div class="col">Column</div>
+				<div class="col">Column</div>
+				<div class="col">Column</div>
+			</div> -->
+		</section>
+
+		<!-- Manage Employee  -->
+
+		<section id="manage_emp" class="container my-5" >
+			<h1 class="text-center">Manage Employee</h1><br>
+			<div class="row g-4">
+				<div class="col-lg-6 col-md-6 col-12">
+					<a href="admin_update_profile.php" class="link-deco">
+						<div class="p-3 border bg-warning rounded-3  ">
+							<h3 class="text-white  text-center">Update Employee Information</h3>
+						</div>
+					</a>
+				</div>  
+				<div class="col-lg-6 col-md-6 col-12">
+					<a href="" class="link-deco">
+						<div class="p-3 border bg-success  rounded-3">
+							<h3 class="text-white text-center">Delete Employee Information</h3>
+						</div>
+					</a>
+					
+				</div>    
+				<div class="col-lg-6 col-md-6 col-12">
+				<a href="admin_manage_leave.php" class="link-deco">
+				<div class="p-3 border bg-primary rounded-3">
+					
+					<h3 class="text-white text-center">Approve Leave Request</h3>
+				</div>
+				</a>
+					
+				
+				
 			</div> 
 			<br>
 			<!-- <div class="container text-center">
