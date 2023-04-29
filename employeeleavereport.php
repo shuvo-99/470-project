@@ -83,50 +83,217 @@ $row=mysqli_fetch_assoc($q);
       <br>
       <h3 class="text-center">My Leave Report</h3>
       <br>
+      <table class="table table-striped table-primary table-bordered border-dark" >
+        <thead>
+        
+          <tr >
+            
+            <th scope="col " class="text-center">Username</th>
+            
+            <th scope="col " class="text-center">Name</th>
+            <th scope="col " class="text-center">Reason</th>
+            <th scope="col " class="text-center">No of days leave</th>
+            <th scope="col " class="text-center">Status</th>
+          </tr>
+          
+        </thead>
+        <tbody>
+          <tr class="td-text text-center">
+          
+            <?php
+
+              $sql= "SELECT username,emp_name,reason,no_of_days_requested,status  FROM leave_request where username = '$_SESSION[username]'";
+              $res=mysqli_query($db, $sql);
+              
+              while ($row= mysqli_fetch_assoc($res)){
+              
+                // echo "<tr><td>{$row["username"]}</td><td>{$row["emp_name"]}</td><td>{$row["reason"]}</td><td>{$row["no_of_days_requested"]}</td><td>{$row["status"]}</td></tr>";
+                  ?> 
+                <tr>
+                
+                <td class="text-center"><?php echo $row['username'] ?></td>
+                <td class="text-center"><?php echo $row['emp_name'] ?></td>
+                <td class="text-center"><?php echo $row['reason'] ?></td>
+                <td class="text-center"><?php echo $row['no_of_days_requested'] ?></td>
+                <td class="text-center"><?php echo $row['status'] ?></td>
+                </tr>  <?php                 
+              }
+              
+              echo "</table>";
+            ?>
+            
+          </tr>
+          
+        </tbody>
+      </table>
   </div>
 </section>
-<table class="table table-striped table-primary table-bordered border-dark" >
-            <thead>
+<br>
+    <footer>
+      <section class="bg-dark">
+        <div class="container my-5">
+          <div class="row gx-5 gy-5">
+            <!-- About me -->
+
+            <div class="col-lg-4">
+              <!-- <div class="p-3 rounded-3 shadow-lg text-center h mb-5">
+                Experience
+              </div> -->
+              <h3 class="fw-bold text-white">About Us</h3>
+              <p class="text-white">
+                Sunrise company is a leading IT company in Bangladesh with over 150+ clients from different countries accross the world. 
+              </p>
+            </div>
+
+            <!-- Links -->
+
+            <div class="col-lg-4">
+              <h3 class="text-white">What makes us unique</h3>
+              <ul class="p-0">
+                <!-- home -->
+
+                <li class="py-2 d-flex">
+                  <div>
+                    <a href="#home">
+                      <i class="fas fa-arrow-right text-white"></i>
+                    </a>
+                  </div>
+                  <div class="text-white ps-3">
+                    <a class="flink text-white link-deco">Multinational team</a>
+                  </div>
+                </li>
+
+                <!-- About Me -->
+
+                <li class="py-2 d-flex">
+                  <div>
+                    <a href="#aboutme">
+                      <i class="fas fa-arrow-right text-white"></i>
+                    </a>
+                  </div>
+                  <div class="text-white ps-3">
+                    <a class=" text-white link-deco">Interdisciplinary skillset</a>
+                  </div>
+                </li>
+
+                <!-- Experience -->
+
+                <li class="py-2 d-flex">
+                  <div>
+                    <a href="#ex">
+                      <i class="fas fa-arrow-right text-white"></i>
+                    </a>
+                  </div>
+                  <div class="text-white ps-3">
+                    <a  class="flink text-white link-deco">Equal opportunity employer</a>
+                  </div>
+                </li>
+
+                <!-- Projects -->
+
+                <li class="py-2 d-flex">
+                  <div>
+                    <a href="#project">
+                      <i class="fas fa-arrow-right text-white"></i>
+                    </a>
+                  </div>
+                  <div class="text-white ps-3">
+                    <a class="flink text-white link-deco">Rapid solution development</a>
+                  </div>
+                </li>
+
+                <!-- Skill -->
+
+                <li class="py-2 d-flex">
+                  <div>
+                    <a href="#skill">
+                      <i class="fas fa-arrow-right text-white"></i>
+                    </a>
+                  </div>
+                  <div class="text-white ps-3">
+                    <a class="flink text-white link-deco">Customer and user centered</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Conatacts and Info -->
+
+            <div class="col-lg-4">
+              <h3 class="text-white">Contacts and Info</h3>
+              <ul class="p-0">
+                <!-- House -->
+
+                <li class="py-2 d-flex">
+                  <div>
+                    <i class="fas fa-map-marker-alt text-white"></i>
+                  </div>
+                  <div class="text-white ps-3">
+                    House - 12, Block - C, Road - 01 Gulshan-01, Dhaka
+                  </div>
+                </li>
+
+                <!-- phone -->
+
+                <li class="py-2 d-flex">
+                  <div>
+                    <i class="fas fa-phone-alt text-white"></i>
+                  </div>
+                  <div class="text-white ps-3">987******</div>
+                </li>
+
+                <!-- gmail -->
+
+                <li class="py-2 d-flex">
+                  <div>
+                    <i class="fas fa-envelope text-white"></i>
+                  </div>
+                  <div class="text-white ps-3">sunrise*****@gmail.com</div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- social Links -->
+
+        <div class="container mt-5 pb-5">
+          <ul class="d-flex justify-content-center align-items-center m-0 p-0">
             
-            <tr >
-              
-              <th scope="col " class="text-center">Username</th>
-              
-              <th scope="col " class="text-center">Name</th>
-              <th scope="col " class="text-center">Reason</th>
-              <th scope="col " class="text-center">No of days leave</th>
-              <th scope="col " class="text-center">Status</th>
-            </tr>
-            
-          </thead>
-          <tbody>
-            <tr class="td-text text-center">
-            
-              <?php
-  
-								$sql= "SELECT username,emp_name,reason,no_of_days_requested,status  FROM leave_request where username = '$_SESSION[username]'";
-								$res=mysqli_query($db, $sql);
-								
-								while ($row= mysqli_fetch_assoc($res)){
-								
-									echo "<tr><td>{$row["username"]}</td><td>{$row["emp_name"]}</td><td>{$row["reason"]}</td><td>{$row["no_of_days_requested"]}</td><td>{$row["status"]}</td></tr>";
-                   ?> 
-                  <tr>
-                  
-                  <td class="text-center"><?php echo $row['username'] ?></td>
-                  <td class="text-center"><?php echo $row['emp_name'] ?></td>
-                  <td class="text-center"><?php echo $row['reason'] ?></td>
-                  <td class="text-center"><?php echo $row['no_of_days_reqested'] ?></td>
-                  <td class="text-center"><?php echo $row['status'] ?></td>
-                  </tr>  <?php                 
-								}
-								
-								echo "</table>";
-              ?>
-              
-            </tr>
-            
-          </tbody>
-        </table>
+            <li class="py-2 pe-4 d-flex">
+              <a
+                target="_blank"
+                href=""
+              >
+                <i class="fab fa-linkedin text-white fa-2x"></i>
+              </a>
+            </li>
+            <li class="py-2 pe-4 d-flex">
+              <a target="_blank" href="">
+                <i class="fab fa-behance-square text-white fa-2x"></i>
+              </a>
+            </li>
+            <li class="py-2 pe-4 d-flex">
+              <a
+                target="_blank"
+                href=""
+              >
+                <i class="fab fa-facebook-square text-white fa-2x"></i>
+              </a>
+            </li>
+            <li class="py-2 pe-4 d-flex">
+              <a target="_blank" href="">
+                <i class="fab fa-twitter-square text-white fa-2x"></i>
+              </a>
+            </li>
+          </ul>
+          <br />
+          <p class="text-white text-center">
+            © Copyright 2023 Sunrise Company | All rights Reserved
+          </p>
+        </div>
+      </section>
+    </footer>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 </body>
 </html>
