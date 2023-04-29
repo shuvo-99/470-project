@@ -1,4 +1,5 @@
 <?php
+  session_start();
   include "dbconnection.php";
   // include "navbaradmin.php";
 ?>
@@ -25,19 +26,12 @@
     ></script>
 			
 		<style type="text/css">
-			.wrapper
-			{
-				width: 300px;
-				margin: 0 auto;
-				color: white;
-			}
+			
 			
       .link-deco {
         text-decoration: none;
       }
-			.gray{
-        color: #ced4da;
-      }
+			
     section
     {
       margin-top: -20px;
@@ -94,36 +88,7 @@
             <div>
             <br>
             <h1 style="font-size: 35px; font-family: Lucida Console">Human Resource Managment System</h1> <br>
-            <h3 style="text-align: center">User Login Form</h3> <br>
-                <form method="POST">
-                
-                    <div class="mb-3">
-                        
-                        <label class="form-label">User name </label>
-                        <input type="type" class="form-control"   name="username" required="">
-                        
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Password</label>
-                        <input type="password" name="password" class="form-control"  required="">
-                    </div>
-        
-                    <br> 
-                    <button type="submit" name="submit" class="btn btn-danger">Submit</button>
-                    <br>
-                    <div class="fw-bold">
-                    <br >
-                      Forgot your password?
-                      <a href="forget_password.php" class="de text-white link-deco">Click here to reset</a>
-                      <br>
-                    </div>
-                </form>
-            </div>
-        </section>
-
-  </main>
-
-  <?php
+            <?php
 
     if(isset($_POST['submit']))
     {
@@ -174,6 +139,37 @@
     }
 
   ?>
+            <h3 style="text-align: center">User Login Form</h3> <br>
+              <form method="POST">
+                
+                    <div class="mb-3">
+                        
+                        User name 
+                        <!-- <label class="form-label">User name </label> -->
+                        <input type="text" class="form-control"   name="username" required="">
+                        
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Password</label>
+                        <input type="password" name="password" class="form-control"  required="">
+                    </div>
+        
+                    <br> 
+                    <button type="submit" name="submit" class="btn btn-danger">Submit</button>
+                    <br>
+                    <div class="fw-bold">
+                    <br >
+                      Forgot your password?
+                      <a href="forget_password.php" class="de text-white link-deco">Click here to reset</a>
+                      <br>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+  </main>
+
+  
     <br>
     <footer>
       <section class="bg-dark">
