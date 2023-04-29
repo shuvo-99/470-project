@@ -79,7 +79,7 @@ session_start();
               
               <div class="d-grid gap-5 pt-5 pb-5 col-6 mx-auto">
                 <a href="update_profile.php" class="btn btn-light" type="button">Update Profile</a>
-                <a href="salary_report.php" class="btn btn-light" type="button">View Salary Report</a>
+                <a href="employeesalary.php" class="btn btn-light" type="button">View Salary Report</a>
                 <a href="employeeleavereport.php" class="btn btn-light" type="button">View Leave Report</a>
                 <a href="leave_request.php" class="btn btn-light" type="button">Leave Request</a>
                 <a href="change_password.php" class="btn btn-light" type="button">Change Password</a>

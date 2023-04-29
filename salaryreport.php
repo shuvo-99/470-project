@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Department</title>
+    <title>Salary Report</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
   
     <!-- font awesome -->
@@ -55,8 +55,15 @@ $row=mysqli_fetch_assoc($q);
 								
 								while ($row= mysqli_fetch_assoc($res)){
 								
-									echo "<tr><td>{$row["username"]}</td><td>{$row["emp_name"]}</td><td>{$row["month"]}</td><td>{$row["medium"]}</td><td>{$row["payment"]}</td></tr>";
-                                    
+									//echo "<tr><td>{$row["username"]}</td><td>{$row["emp_name"]}</td><td>{$row["month"]}</td><td>{$row["medium"]}</td><td>{$row["payment"]}</td></tr>";
+                  ?>
+                  <tr>
+                      <td class="text-center"><?php echo $row['username'] ?></td>
+                      <td class="text-center"><?php echo $row['emp_name'] ?></td>
+                      <td class="text-center"><?php echo $row['month'] ?></td>
+                      <td class="text-center"><?php echo $row['medium'] ?></td>
+                      <td class="text-center"><?php echo $row['payment'] ?></td>
+                  </tr>   <?php               
 								}
 								
 								echo "</table>";
