@@ -31,8 +31,12 @@
       .link-deco {
         text-decoration: none;
       }
-			.gray{
-        color: #ced4da;
+			.btn-color{
+        color: rgb(105, 228, 215);
+      }
+      .h:hover {
+        transform: scale(1.1);
+        transition: transform 0.2s ease-out;
       }
     
 		</style>
@@ -103,34 +107,38 @@
 		<section id="additem" class="container my-5" >
 			<h1 class="text-center">Add Items</h1><br>
 			<div class="row g-4">
-				<div class="col-lg-6 col-md-6 col-12">
+				<div class="col-lg-5 col-md-6 btn-color col-12">
 					<a href="add_employee.php" class="link-deco">
-						<div class="p-3 border bg-warning rounded-3  ">
-							<h3 class="text-white  text-center">Employee</h3>
+						<div class="p-3 border shadow-lg  rounded-3 h ">
+							<h3 class="text-dark  text-center">Employee</h3>
 						</div>
 					</a>
 				</div>  
-				<div class="col-lg-6 col-md-6 col-12">
+        <div class="col-lg-2 col-md-6 col-12">
+        </div>
+				<div class="col-lg-5 col-md-6 col-12">
 					<a href="add_department.php" class="link-deco">
-						<div class="p-3 border bg-success  rounded-3">
-							<h3 class="text-white text-center">Department</h3>
+						<div class="p-3 border shadow-lg  rounded-3 h">
+							<h3 class="text-dark text-center">Department</h3>
 						</div>
 					</a>
 					
 				</div>    
-				<div class="col-lg-6 col-md-6 col-12">
+				<div class="col-lg-5 col-md-6 col-12">
 				<a href="add_project.php" class="link-deco">
-				<div class="p-3 border bg-primary rounded-3">
+				<div class="p-3 border shadow-lg  rounded-3 h">
 					
-					<h3 class="text-white text-center">Project</h3>
+					<h3 class="text-dark text-center">Project</h3>
 				</div>
 				</a>
 					
 				</div>
-				<div class="col-lg-6 col-md-6 col-12">
+        <div class="col-lg-2 col-md-6 col-12">
+        </div>
+				<div class="col-lg-5 col-md-6 col-12">
 				<a href="send_salary.php" class="link-deco">
-					<div class="p-3 border bg-success  rounded-3">
-						<h3 class="text-white text-center">Payment</h3>
+					<div class="p-3 border shadow-lg  rounded-3 h">
+						<h3 class="text-dark text-center">Payment</h3>
 						
 					</div>
 				</a>
@@ -151,45 +159,53 @@
 		<section id="report" class="container my-5" >
 			<h1 class="text-center">Manage Reports</h1><br>
 			<div class="row g-4">
-				<div class="col-lg-6 col-md-6 col-12">
+				<div class="col-lg-5 col-md-6 col-12">
 					<a href="employeereport.php" class="link-deco">
-						<div class="p-3 border bg-warning rounded-3  ">
-							<h3 class="text-white  text-center">Employee</h3>
+						<div class="p-3 border shadow-lg  rounded-3 h  ">
+							<h3 class="text-dark  text-center">Employee</h3>
 						</div>
 					</a>
 				</div>  
-				<div class="col-lg-6 col-md-6 col-12">
+        <div class="col-lg-2 col-md-6 col-12">
+        </div>
+				<div class="col-lg-5 col-md-6 col-12">
 					<a href="departmentreport.php" class="link-deco">
-						<div class="p-3 border bg-success  rounded-3">
-							<h3 class="text-white text-center">Department</h3>
+						<div class="p-3 border shadow-lg  rounded-3 h">
+							<h3 class="text-dark text-center">Department</h3>
 						</div>
 					</a>
 					
 				</div>    
-				<div class="col-lg-6 col-md-6 col-12">
+				<div class="col-lg-5 col-md-6 col-12">
 				<a href="projectreport.php" class="link-deco">
-				<div class="p-3 border bg-primary rounded-3">
+				<div class="p-3 border shadow-lg  rounded-3 h">
 					
-					<h3 class="text-white text-center">Project</h3>
+					<h3 class="text-dark text-center">Project</h3>
 				</div>
 				</a>
 					
 				</div>
-				<div class="col-lg-6 col-md-6 col-12">
+        <div class="col-lg-2 col-md-6 col-12">
+        </div>
+				<div class="col-lg-5 col-md-6 col-12">
 				<a href="salaryreport.php" class="link-deco">
-					<div class="p-3 border bg-primary  rounded-3">
-						<h3 class="text-white text-center">Payment</h3>
+					<div class="p-3 border shadow-lg  rounded-3 h">
+						<h3 class="text-dark text-center">Payment</h3>
 						
 					</div>
 				</a>
 				</div>
-				<div class="col-lg-6 col-md-6 col-12">
+        <div class="col-lg-4 col-md-6 col-12">
+        </div>
+				<div class="col-lg-4 col-md-6 col-12">
 				<a href="adminleavereport.php" class="link-deco">
-					<div class="p-3 border bg-primary  rounded-3">
-						<h3 class="text-white text-center">Leave</h3>
+					<div class="p-3 border shadow-lg  rounded-3 h">
+						<h3 class="text-dark text-center">Leave</h3>
 						
 					</div>
 				</a>
+        <div class="col-lg-4 col-md-6 col-12">
+        </div>
 				</div>
 			</div> 
 			<br>
@@ -207,28 +223,34 @@
 		<section id="manage_emp" class="container my-5" >
 			<h1 class="text-center">Manage Employee</h1><br>
 			<div class="row g-4">
-				<div class="col-lg-6 col-md-6 col-12">
+				<div class="col-lg-5 col-md-6 col-12">
 					<a href="admin_update_profile.php" class="link-deco">
-						<div class="p-3 border bg-warning rounded-3  ">
-							<h3 class="text-white  text-center">Update Employee Information</h3>
+						<div class="p-3 border shadow-lg  rounded-3 h  ">
+							<h3 class="text-dark  text-center">Update Employee Information</h3>
 						</div>
 					</a>
 				</div>  
-				<div class="col-lg-6 col-md-6 col-12">
+        <div class="col-lg-2 col-md-6 col-12">
+        </div>
+				<div class="col-lg-5 col-md-6 col-12">
 					<a href="deleteemployee.php" class="link-deco">
-						<div class="p-3 border bg-success  rounded-3">
-							<h3 class="text-white text-center">Delete Employee Information</h3>
+						<div class="p-3 border shadow-lg  rounded-3 h">
+							<h3 class="text-dark text-center">Delete Employee Information</h3>
 						</div>
 					</a>
 					
-				</div>    
-				<div class="col-lg-6 col-md-6 col-12">
+				</div> 
+        <div class="col-lg-4 col-md-6 col-12">
+        </div>  
+				<div class="col-lg-4 col-md-6 col-12">
 				<a href="admin_manage_leave.php" class="link-deco">
-				<div class="p-3 border bg-primary rounded-3">
+				<div class="p-3 border shadow-lg  rounded-3 h">
 					
-					<h3 class="text-white text-center">Approve Leave Request</h3>
+					<h3 class="text-dark text-center">Approve Leave Request</h3>
 				</div>
 				</a>
+        <div class="col-lg-4 col-md-6 col-12">
+        </div> 
 					
 				
 				
