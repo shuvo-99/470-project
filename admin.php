@@ -215,7 +215,7 @@
 					</a>
 				</div>  
 				<div class="col-lg-6 col-md-6 col-12">
-					<a href="" class="link-deco">
+					<a href="deleteemployee.php" class="link-deco">
 						<div class="p-3 border bg-success  rounded-3">
 							<h3 class="text-white text-center">Delete Employee Information</h3>
 						</div>
@@ -340,7 +340,7 @@
                     </a>
                   </div>
                   <div class="text-white ps-3">
-                    <a class="flink text-white">Multinational team</a>
+                    <a class="flink text-white link-deco">Multinational team</a>
                   </div>
                 </li>
 
@@ -353,7 +353,7 @@
                     </a>
                   </div>
                   <div class="text-white ps-3">
-                    <a class=" text-white">Interdisciplinary skillset</a>
+                    <a class=" text-white link-deco">Interdisciplinary skillset</a>
                   </div>
                 </li>
 
@@ -366,7 +366,7 @@
                     </a>
                   </div>
                   <div class="text-white ps-3">
-                    <a  class="flink text-white">Equal opportunity employer</a>
+                    <a  class="flink text-white link-deco">Equal opportunity employer</a>
                   </div>
                 </li>
 
@@ -379,7 +379,7 @@
                     </a>
                   </div>
                   <div class="text-white ps-3">
-                    <a class="flink text-white">Rapid solution development</a>
+                    <a class="flink text-white link-deco">Rapid solution development</a>
                   </div>
                 </li>
 
@@ -392,7 +392,7 @@
                     </a>
                   </div>
                   <div class="text-white ps-3">
-                    <a href="#skill" class="flink text-white">Customer and user centered</a>
+                    <a class="flink text-white link-deco">Customer and user centered</a>
                   </div>
                 </li>
               </ul>
