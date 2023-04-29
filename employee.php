@@ -23,6 +23,9 @@ session_start();
       .func_btn{
         color: rgb(250, green, blue);
       }
+      .link-deco {
+        text-decoration: none;
+      }
     </style>
   </head>
   <body>
@@ -248,7 +251,7 @@ session_start();
                     </a>
                   </div>
                   <div class="text-white ps-3">
-                    <a class="flink text-white">Multinational team</a>
+                    <a class="flink text-white link-deco">Multinational team</a>
                   </div>
                 </li>
 
@@ -261,7 +264,7 @@ session_start();
                     </a>
                   </div>
                   <div class="text-white ps-3">
-                    <a class=" text-white">Interdisciplinary skillset</a>
+                    <a class=" text-white link-deco">Interdisciplinary skillset</a>
                   </div>
                 </li>
 
@@ -274,7 +277,7 @@ session_start();
                     </a>
                   </div>
                   <div class="text-white ps-3">
-                    <a  class="flink text-white">Equal opportunity employer</a>
+                    <a  class="flink text-white link-deco">Equal opportunity employer</a>
                   </div>
                 </li>
 
@@ -287,7 +290,7 @@ session_start();
                     </a>
                   </div>
                   <div class="text-white ps-3">
-                    <a class="flink text-white">Rapid solution development</a>
+                    <a class="flink text-white link-deco">Rapid solution development</a>
                   </div>
                 </li>
 
@@ -300,7 +303,7 @@ session_start();
                     </a>
                   </div>
                   <div class="text-white ps-3">
-                    <a href="#skill" class="flink text-white">Customer and user centered</a>
+                    <a class="flink text-white link-deco">Customer and user centered</a>
                   </div>
                 </li>
               </ul>
