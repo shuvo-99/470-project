@@ -31,7 +31,7 @@ $q=mysqli_query($db,"SELECT * FROM leave_request");
 
 $row=mysqli_fetch_assoc($q);
 ?>
-<table class="table table-striped table-primary" >
+<table class="table table-striped table-primary container " >
             <thead>
             
             <tr >
@@ -56,17 +56,17 @@ $row=mysqli_fetch_assoc($q);
 								while ($row= mysqli_fetch_assoc($res)){
 								
 									// echo "<tr><td>{$row["req_sl"]}</td><td>{$row["username"]}</td><td>{$row["emp_name"]}</td><td>{$row["reason"]}</td><td>{$row["no_of_days_requested"]}</td><td>{$row["status"]}</td></tr>";
-                  ?>
-                  <tr>
+                ?>                   
+								
+								<tr>
                       <td class="text-center"><?php echo $row['req_sl'] ?></td>
                       <td class="text-center"><?php echo $row['username'] ?></td>
                       <td class="text-center"><?php echo $row['emp_name'] ?></td>
                       <td class="text-center"><?php echo $row['reason'] ?></td>
                       <td class="text-center"><?php echo $row['no_of_days_requested'] ?></td>
                       <td class="text-center"><?php echo $row['status'] ?></td>
-                  </tr> <?php                 
-								}
-								
+                  </tr> <?php
+                }
 								echo "</table>";
               ?>
               
@@ -75,19 +75,49 @@ $row=mysqli_fetch_assoc($q);
           </tbody>
         </table>
 
-<form method="POST">
-    <div class="form-group">
-        <label for="exampleInputEmail1">Serial</label>
-        <input type="text" name="serial" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Serial">
-        
-    </div>
-    <div class="form-group">
-        <label for="exampleInputPassword1">Status</label>
-        <input type="text" name="status" class="form-control" id="exampleInputPassword1" placeholder="Enter Status">
-    </div>
+
+    <!-- Form -->
+    <section style="height: 500px;" class="container bg-info d-flex justify-content-center align-items-center rounded-3 " id="subscribe">
+            
+      <div>
+      <br>
+      <h1>Update Leave Status</h1> <br>
+          <form method="POST">
+          
+              <div class="mb-3">
+                  
+                  <label class="form-label">Serial </label>
+                  <input type="type" class="form-control"   name="serial" required="">
+                  
+              </div>
+              <div class="mb-3">
+                  <label class="form-label">Status</label>
+                  <input type="text" name="status" class="form-control"  required="">
+              </div>
+  
+              <br> 
+              <button type="submit" name="submit" class="btn btn-danger">Submit</button>
+              <br>
+          </form>
+      </div>
+    </section>
     
-    <button type="submit" name="submit" class="btn btn-primary">Submit</button>
-</form>
+    <!-- <div class="container">
+      <form method="POST">
+          <div class="form-group">
+              <label for="exampleInputEmail1">Serial</label>
+              <input type="text" name="serial" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Serial">
+              
+          </div>
+          <div class="form-group">
+              <label for="exampleInputPassword1">Status</label>
+              <input type="text" name="status" class="form-control" id="exampleInputPassword1" placeholder="Enter Status">
+          </div>
+          
+          <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div> -->
+  
 
 <?php
 
